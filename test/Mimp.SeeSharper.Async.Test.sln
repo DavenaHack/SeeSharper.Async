@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimp.SeeSharper.Async.Test", "Mimp.SeeSharper.Async.Test\Mimp.SeeSharper.Async.Test.csproj", "{F49DD330-FED7-451F-A1AC-28DA9DD73B81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{46F8838C-4437-4A7A-868D-541BD4EF2BF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimp.SeeSharper.Async", "..\src\Mimp.SeeSharper.Async\Mimp.SeeSharper.Async.csproj", "{AD86B8E1-C507-4C35-A9EC-BB6F67075756}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49DD330-FED7-451F-A1AC-28DA9DD73B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49DD330-FED7-451F-A1AC-28DA9DD73B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49DD330-FED7-451F-A1AC-28DA9DD73B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49DD330-FED7-451F-A1AC-28DA9DD73B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD86B8E1-C507-4C35-A9EC-BB6F67075756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD86B8E1-C507-4C35-A9EC-BB6F67075756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD86B8E1-C507-4C35-A9EC-BB6F67075756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD86B8E1-C507-4C35-A9EC-BB6F67075756}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD86B8E1-C507-4C35-A9EC-BB6F67075756} = {46F8838C-4437-4A7A-868D-541BD4EF2BF1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C0642BE5-D729-417C-A36D-89677CFA7FD8}
+	EndGlobalSection
+EndGlobal
