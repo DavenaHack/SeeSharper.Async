@@ -27,15 +27,5 @@ namespace Mimp.SeeSharper.Async
         }
 
 
-        public static IEnumerable<T> Await<T>(this IEnumerableAwaiter<T> awaiter)
-        {
-            if (awaiter is null)
-                throw new ArgumentNullException(nameof(awaiter));
-
-            while (awaiter.AwaitNextAsync().Await())
-                yield return awaiter.GetNextAsync().Await();
-        }
-
-
     }
 }

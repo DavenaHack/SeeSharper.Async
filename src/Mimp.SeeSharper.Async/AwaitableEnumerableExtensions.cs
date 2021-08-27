@@ -64,5 +64,17 @@ namespace Mimp.SeeSharper.Async
             return enumerable.GetAwaiter(CancellationToken.None);
         }
 
+
+        public static IEnumerable<T> Await<T>(this IAwaitableEnumerable<T> enumerable)
+        {
+            if (enumerable is null)
+                throw new ArgumentNullException(nameof(enumerable));
+
+            var awaiter = enumerable.GetAwaiter();
+            while (awaiter.AwaitNextAsync().Await())
+                yield return awaiter.GetNextAsync().Await();
+        }
+
+
     }
 }
