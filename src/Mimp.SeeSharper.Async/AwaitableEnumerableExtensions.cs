@@ -1,6 +1,7 @@
 ﻿using Mimp.SeeSharper.Async.Abstraction;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace Mimp.SeeSharper.Async
@@ -9,7 +10,7 @@ namespace Mimp.SeeSharper.Async
     {
 
 
-        public static EnumerableAwaiterAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAwaitableEnumerable<T> awaitable, CancellationToken cancellationToken)
+        public static IAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAwaitableEnumerable<T> awaitable, CancellationToken cancellationToken)
         {
             if (awaitable is null)
                 throw new ArgumentNullException(nameof(awaitable));
@@ -17,7 +18,7 @@ namespace Mimp.SeeSharper.Async
             return new EnumerableAwaiterAsyncEnumerator<T>(awaitable.GetAwaiter(cancellationToken));
         }
 
-        public static EnumerableAwaiterAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAwaitableEnumerable<T> awaitable) =>
+        public static IAsyncEnumerator<T> GetAsyncEnumerator<T>(this IAwaitableEnumerable<T> awaitable) =>
             awaitable.GetAsyncEnumerator(CancellationToken.None);
 
 
@@ -28,6 +29,15 @@ namespace Mimp.SeeSharper.Async
 
             return new AwaitableEnumerable<T>(enumerable);
         }
+
+        public static IAwaitableEnumerable<T> ToAwaitable<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable is null)
+                throw new ArgumentNullException(nameof(enumerable));
+
+            return enumerable.Select(Awaitables.Result).ToAwaitable();
+        }
+
 
         public static IAwaitableEnumerable<T> ToAwaitable<T>(this IAsyncEnumerable<T> enumerable)
         {
